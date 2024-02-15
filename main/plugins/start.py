@@ -8,7 +8,7 @@ from ethon.mystarts import start_srb
     
 S = '/' + 's' + 't' + 'a' + 'r' + 't'
 
-@Drone.on(events.callbackquery.CallbackQuery(data="set"))
+@raoji47.on(events.callbackquery.CallbackQuery(data="set"))
 async def sett(event):    
     raoji47 = event.client                    
     button = await event.get_message()

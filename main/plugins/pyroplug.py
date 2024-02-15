@@ -2,7 +2,7 @@
 
 import asyncio, time, os
 
-from .. import bot as Drone
+from .. import bot as raoji47
 from main.plugins.progress import progress_for_pyrogram
 from main.plugins.helpers import screenshot
 
@@ -214,4 +214,4 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
         
 async def get_bulk_msg(userbot, client, sender, msg_link, i):
     x = await client.send_message(sender, "Processing!")
-    await get_msg(userbot, client, Drone, sender, x.id, msg_link, i)
+    await get_msg(userbot, client, raoji47, sender, x.id, msg_link, i)
