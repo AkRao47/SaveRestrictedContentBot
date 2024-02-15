@@ -21,3 +21,6 @@ print("By MaheshChauhan • DroneBots")
 
 if __name__ == "__main__":
     bot.run_until_disconnected()
+  from keep_alive import keep_alive
+keep_alive()
+
