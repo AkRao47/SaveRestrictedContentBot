@@ -17,7 +17,7 @@ ft = f"To use this bot you've to join @{fs}."
 
 message = "Send me the message link you want to start saving from, as a reply to this message."
 
-@Drone.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+@raoji47.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def clone(event):
     if event.is_reply:
         reply = await event.get_reply_message()
@@ -42,8 +42,8 @@ async def clone(event):
         if 't.me/' in link:
             await get_msg(userbot, Bot, event.sender_id, edit.id, link, 0)
     except FloodWait as fw:
-        return await Drone.send_message(event.sender_id, f'Try again after {fw.x} seconds due to floodwait from telegram.')
+        return await raoji47.send_message(event.sender_id, f'Try again after {fw.x} seconds due to floodwait from telegram.')
     except Exception as e:
         print(e)
-        await Drone.send_message(event.sender_id, f"An error occurred during cloning of `{link}`\n\n**Error:** {str(e)}")
+        await raoji47.send_message(event.sender_id, f"An error occurred during cloning of `{link}`\n\n**Error:** {str(e)}")
     
