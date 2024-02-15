@@ -1,8 +1,8 @@
-#Github.com/Vasusen-code
+
 
 import time, os
 
-from .. import bot as Drone
+from .. import bot as raoji47
 from .. import userbot, Bot
 from .. import FORCESUB as fs
 from main.plugins.pyroplug import get_msg
@@ -40,7 +40,7 @@ async def clone(event):
             await edit.edit(q)
             return
         if 't.me/' in link:
-            await get_msg(userbot, Bot, Drone, event.sender_id, edit.id, link, 0)
+            await get_msg(userbot, Bot, event.sender_id, edit.id, link, 0)
     except FloodWait as fw:
         return await Drone.send_message(event.sender_id, f'Try again after {fw.x} seconds due to floodwait from telegram.')
     except Exception as e:
