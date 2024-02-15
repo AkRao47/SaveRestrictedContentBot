@@ -1,5 +1,4 @@
-#Tg:MaheshChauhan/DroneBots
-#Github.com/Vasusen-code
+
 
 """
 Plugin for both public & private channels!
@@ -7,7 +6,7 @@ Plugin for both public & private channels!
 
 import time, os, asyncio
 
-from .. import bot as Drone
+from .. import bot as raoji47
 from .. import userbot, Bot, AUTH
 from .. import FORCESUB as fs
 from main.plugins.pyroplug import get_bulk_msg
@@ -41,9 +40,7 @@ async def _batch(event):
     if s == True:
         await event.reply(r)
         return       
-    if event.sender_id in batch:
-        return await event.reply("You've already started one batch, wait for it to complete you dumbfuck owner!")
-    async with Drone.conversation(event.chat_id) as conv: 
+ async with Drone.conversation(event.chat_id) as conv: 
         if s != True:
             await conv.send_message("Send me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
             try:
@@ -66,8 +63,8 @@ async def _batch(event):
                 return conv.cancel()
             try:
                 value = int(_range.text)
-                if value > 100:
-                    await conv.send_message("You can only get upto 100 files in a single batch.")
+                if value > 500:
+                    await conv.send_message("You can only get upto 500 files in a single batch.")
                     return conv.cancel()
             except ValueError:
                 await conv.send_message("Range must be an integer!")
