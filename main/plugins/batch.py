@@ -25,14 +25,14 @@ ft = f"To use this bot you've to join @{fs}."
 
 batch = []
 
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH, pattern='/cancel'))
+@raoji47.on(events.NewMessage(incoming=True, from_users=AUTH, pattern='/cancel'))
 async def cancel(event):
     if not event.sender_id in batch:
         return await event.reply("No batch active.")
     batch.clear()
     await event.reply("Done.")
     
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH, pattern='/batch'))
+@raoji47.on(events.NewMessage(incoming=True, from_users=AUTH, pattern='/batch'))
 async def _batch(event):
     if not event.is_private:
         return
@@ -40,7 +40,7 @@ async def _batch(event):
     if s == True:
         await event.reply(r)
         return       
- async with Drone.conversation(event.chat_id) as conv: 
+ async with raoji47.conversation(event.chat_id) as conv: 
         if s != True:
             await conv.send_message("Send me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
             try:
