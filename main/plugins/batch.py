@@ -40,7 +40,7 @@ async def _batch(event):
     if s == True:
         await event.reply(r)
         return       
- async with raoji47.conversation(event.chat_id) as conv: 
+
         if s != True:
             await conv.send_message("Send me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
             try:
