@@ -6,3 +6,5 @@ cryptg
 tgcrypto
 pyrogram
 python-decouple
+flask==2.1.0
+
