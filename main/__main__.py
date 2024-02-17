@@ -1,5 +1,3 @@
-
-
 import glob
 from pathlib import Path
 from main.utils import load_plugins
@@ -8,7 +6,7 @@ from main import bot
 from flask import Flask
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
+                    level=logging.DEBUG)  # Set the logging level to DEBUG for more details
 
 path = "main/plugins/*.py"
 files = glob.glob(path)
@@ -26,6 +24,13 @@ print("Successfully deployed!")
 print("By MaheshChauhan • DroneBots")
 
 if __name__ == "__main__":
-    bot.start()  # Assuming 'start' is the method to start the bot in your 'bot' instance
-    # Run the Flask app on port 5000
-    app.run(host='0.0.0.0', port=5000)
+    try:
+        # Start the Telegram bot
+        print("Attempting to start the bot...")
+        bot.start()
+        print("Bot started successfully!")
+
+        # Run the Flask app on port 5000
+        app.run(host='0.0.0.0', port=5000)
+    except Exception as e:
+        print(f"Error: {e}")
