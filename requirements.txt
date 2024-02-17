@@ -6,4 +6,6 @@ cryptg
 tgcrypto
 pyrogram
 python-decouple
-
+flask
+gunicorn==20.1.0
+aiohttp
